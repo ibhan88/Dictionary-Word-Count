@@ -2,7 +2,7 @@
 
 #Open the  file:
 
-text_file = open("test.txt")
+text_file = open("twain.txt")
 
 all_words_in_file = []
 
@@ -23,7 +23,11 @@ for word in all_words_in_file:
     #Add new words to dictionary. Otherwise increment count.
     word_counts[word] = word_counts.get(word, 0) + 1
 
-print word_counts
+for item in word_counts.iteritems():
+    print item
+
+# for tup in word_counts.items():
+#     print "%s: %d" % (tup[0], tup[1])
 
 
 
