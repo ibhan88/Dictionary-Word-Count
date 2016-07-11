@@ -1,8 +1,10 @@
 # put your code here.
 
+import sys
+
 #Open the  file:
 
-text_file = open("twain.txt")
+text_file = open(sys.argv[1])
 
 all_words_in_file = []
 
@@ -19,6 +21,9 @@ word_counts = {}
 
 #Loop over master word list
 for word in all_words_in_file:
+
+    clean_word = word.strip('.!@#$%^&*()-?')
+    clean_word = clean_word.lower()
 
     #Add new words to dictionary. Otherwise increment count.
     word_counts[word] = word_counts.get(word, 0) + 1
